@@ -9,11 +9,12 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@": ["src/*"]
+      "@/*": ["./src/*"],
+      "@": ["./src"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "webpack/*"]
+  "include": ["src/**/*.ts", "webpack/*"]
 }
