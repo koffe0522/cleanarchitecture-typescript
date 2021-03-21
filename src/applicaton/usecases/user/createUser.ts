@@ -8,7 +8,7 @@ class CreateUser {
     this.userRepository = userRepository;
   }
 
-  public createUser(user: User): Promise<User> {
+  public createUser(user: User): any {
     // const userDTO = toCreateUserDTO(user);
     // return this.userRepository.create(userDTO);
   }

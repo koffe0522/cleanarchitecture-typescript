@@ -1,22 +1,20 @@
 import * as path from 'path';
-import nodeExternals from 'webpack-node-externals';
 import * as webpack from 'webpack';
-
-const SRC_ROOT = path.join(__dirname, "../src");
+import nodeExternals from 'webpack-node-externals';
+import Dotenv from 'dotenv-webpack';
 
 const config: webpack.Configuration = {
-  context: SRC_ROOT,
   target: 'node',
   mode: 'production',
   entry: path.resolve("src", "index.ts"),
   output: {
+    path: path.resolve(__dirname, "../dist"),
     filename: "server.js",
-    path: path.join(__dirname, "../dist"),
   },
   resolve: {
     extensions: [".ts", ".js", ".json"],
     alias: {
-      "@": path.join(__dirname, "/src/"),
+      "@": path.resolve(__dirname, "../src/"),
     },
   },
   module: {
@@ -31,6 +29,7 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  plugins: [new Dotenv({ systemvars: true, path: path.resolve(__dirname, "../.env") })],
   externals: [nodeExternals() as any],
 };
 

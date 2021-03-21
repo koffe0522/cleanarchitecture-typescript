@@ -2,6 +2,14 @@
 
 This is the example repository
 
+## Enviroment
+
+- start
+  `docker-compose up -d --build`
+
+- stop
+  `docker-compose down`
+
 ## 参考
 
 https://qiita.com/baby-degu/items/f1489dd94becd46ab523

@@ -8,9 +8,9 @@ class UserRepositoryImpl extends UserRepository {
   }
 
   async findAll(): Promise<User[]> {
-    const queryResults = await this.dbConnection.execute<Promise<{ id: number, name: string, age: number }[]>>('SELECT id, name, age FROM users');
+    const queryResults = await this.dbConnection.execute('SELECT id, name, age FROM users');
     return queryResults
-      .map(queryResult =>
+      .map((queryResult: any) =>
         new User(
           queryResult['id'],
           queryResult['name'],
@@ -20,7 +20,7 @@ class UserRepositoryImpl extends UserRepository {
   }
 
   async find(id: number): Promise<User> {
-    const queryResult = await this.dbConnection.execute<Promise<{ id: number, name: string, age: number }>>('SELECT id, name, age FROM users WHERE id = id', id);
+    const queryResult = await this.dbConnection.execute('SELECT id, name, age FROM users WHERE id = ?', id);
     return new User(
       queryResult['id'],
       queryResult['name'],

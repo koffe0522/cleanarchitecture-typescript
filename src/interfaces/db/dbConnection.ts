@@ -1,3 +1,3 @@
 export abstract class dbConnection {
-  abstract execute<T>(query: string, params?: number | string | null): T;
+  abstract execute(query: string, params?: number | string | null): any;
 }
