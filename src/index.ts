@@ -28,6 +28,33 @@ router.get(
   }
 );
 
+router.post(
+  "/user/create",
+  async (req: express.Request, res: express.Response): Promise<void> => {
+    const useController = new UserController(db)
+    const response = await useController.createUser(req.params as any);
+    res.json(response)
+  }
+);
+
+router.post(
+  "/user/update",
+  async (req: express.Request, res: express.Response): Promise<void> => {
+    const useController = new UserController(db)
+    const response = await useController.updateUser(req.params as any);
+    res.json(response)
+  }
+);
+
+router.post(
+  "/user/delete",
+  async (req: express.Request, res: express.Response): Promise<void> => {
+    const useController = new UserController(db)
+    const response = await useController.deleteUser(req.params as any);
+    res.json(response)
+  }
+);
+
 app.use("/", router);
 
 app.listen(3000, () => {

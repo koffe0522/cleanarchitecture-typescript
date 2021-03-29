@@ -1,7 +1,11 @@
 import { FindUserUseCase } from "./findUserUseCase";
-import { CreateUser } from "./createUser";
+import { CreateUserUseCase } from "./createUserUseCase";
+import { UpdateUserUseCase } from "./updateUserUseCase";
+import { DeleteUserUseCase } from "./deleteUserUseCase";
 
-export default {
+export {
   FindUserUseCase,
-  CreateUser,
+  CreateUserUseCase,
+  UpdateUserUseCase,
+  DeleteUserUseCase
 };
