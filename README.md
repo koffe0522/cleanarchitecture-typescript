@@ -1,4 +1,4 @@
-# Express-typescript
+# Cleanarchitecture-Typescript
 
 This is the example repository
 
