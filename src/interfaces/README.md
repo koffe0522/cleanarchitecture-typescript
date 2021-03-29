@@ -12,6 +12,7 @@
 ├── contorollers (Contorollers)
 ├── serializers (Presenters)
 ├── db (Gateways)
+├── dao
 ├── requests
 └── README.md
 </pre>
@@ -27,6 +28,10 @@
 ## Gateways
 
 - Frameworks&Drivers からのデータを抽象化する。
+
+### dao
+
+- データベースにアクセスするためのオブジェクト。
 
 ### requests
 

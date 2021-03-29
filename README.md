@@ -10,6 +10,15 @@ This is the example repository
 - stop
   `docker-compose down`
 
+## レイヤー
+
+| レイヤー名                 | 含む概念                                      |
+| -------------------------- | --------------------------------------------- |
+| Enterprise Business Rules  | Entities(domain)                              |
+| Application Business Rules | Use Cases / Interactor                        |
+| Interface Adapters         | Controllers / Presenters / Gateways           |
+| Frameworks & Drivers       | Web / UI / External INterfaces / Devices / DB |
+
 ## 参考
 
 https://qiita.com/baby-degu/items/f1489dd94becd46ab523
